@@ -1,0 +1,12 @@
+config { type: "incremental" }
+
+SELECT ingestion_time, orders.product_id, product_name, quantity
+FROM `dataform_playground.orders` AS orders 
+JOIN `dataform_playground.products` as products
+USING(product_id)
+
+${when(
+    incremental(), 
+    `WHERE ingestion_time > (SELECT MAX(ingestion_time) 
+     FROM ${self()})`
+)}
