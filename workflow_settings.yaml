@@ -1,5 +1,5 @@
   defaultProject: shaped-epigram-449217-h8
   defaultDataset: dataform
-  defaultLocation: EU
+  defaultLocation: europe-west1
   defaultAssertionDataset: dataform_assertions
   #dataformCoreVersion: 3.0.0
