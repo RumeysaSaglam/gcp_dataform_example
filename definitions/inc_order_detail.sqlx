@@ -10,3 +10,6 @@ ${when(
     `WHERE ingestion_time > (SELECT MAX(ingestion_time) 
      FROM ${self()})`
 )}
+
+-- işlenen son kaydı gösteren hedef tablonun değerini bulma
+-- WHERE koşulu: ingestion_time kolonu üzerinden en son eklenen veriyi almak için, daha önceki modeldeki en yüksek ingestion_time değerini kullanıyoruz.
